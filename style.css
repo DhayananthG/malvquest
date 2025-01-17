@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+.main_cover {
+    background-image: url("./assets/home-profile.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px; /* Adjust this height as needed */
+  }
+  
+  @media (max-width: 768px) {
+    .main_cover {
+        height: 200px; /* Adjust the height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main_cover {
+        height: 150px; /* Adjust the height for very small screens */
+    }
+  } 
+
+
+.booking-button{
+    background-color: #ff8c00;
+    font-size: 20px;
+}

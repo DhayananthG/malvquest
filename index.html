@@ -3,24 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet"/>
     <title>MalVQuest-Development</title>
 </head>
 <body>
+    <!-- HOME  -->
+    <section id="home">
+        <div class="h-screen w-full bg-cover bg-center fade" style="background-image: url('./assets/home-profile.jpg');">
+          <!-- Navbar -->
+          <nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
+            <div class="px-12 py-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+              <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold text-gray-900">
+                  <img src="./assets/Logo.jpg" class="w-20 h-30" alt="Logo">
+                </a>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                  <button id="sidebarOpen" class="hover:text-yellow-400 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Links for Desktop -->
+                <div class="items-center hidden md:flex md:space-x-8 playfair-display">
+                  <a href="#home" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md">HOME</a>
+                  <a href="#about" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">ABOUT US</a>
+                  <a href="#services" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">SERVICES</a>
+                  <a href="#countries" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">COUNTRIES</a>
+                  <a href="#contact" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">CONTACT US</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+      
+            <!-- Slideshow container -->
+            <div class="flex flex-col items-center justify-center min-h-screen overflow-hidden" id="slideshow-container">
+                <div class="flex flex-col items-center justify-center w-full h-full text-center">
+                <div id="animated-text" class="text-2xl font-bold text-white playfair-display sm:text-3xl md:text-4xl lg:text-5xl"></div>
+                <p class="mt-4 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+                    Your Gateway to Global Education
+                </p>
+                <a href="#"
+                    class="mt-6 px-6 py-3 text-lg font-semibold text-white rounded-md shadow-md booking-button">
+                    Book a Free Counselling
+                </a>
+                </div>
+            </div>
+          
+      
+          <!-- Sidebar for Mobile -->
+          <div id="sidebar" class="fixed inset-0 z-50 w-64 text-white transition-transform duration-300 ease-in-out transform -translate-x-full bg-black md:hidden">
+            <div class="flex items-center justify-between px-4 py-4 border-b border-gray-700">
+              <h2 class="text-lg font-bold">Menu</h2>
+              <button id="sidebarClose" class=" focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="p-4 space-y-6">
+              <a href="#home" class="block text-white font-semibold hover:text-yellow-400 poppins-light">HOME</a>
+              <a href="#about" class="block text-white font-semibold hover:text-yellow-400 poppins-light">ABOUT US</a>
+              <a href="#services" class="block text-white font-semibold hover:text-yellow-400 poppins-light">SERVICES</a>
+              <a href="#countries" class="block text-white font-semibold hover:text-yellow-400 poppins-light">COUNTRIES</a>
+              <a href="#contact" class="block text-white font-semibold hover:text-yellow-400 poppins-light">CONTACT US</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
     <!-- ABOUT US  -->
     <section id="about" class="bg-white py-16">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
           <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Left Side (Content Section) -->
             <div class="flex flex-col justify-center">
-              <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6">
                 About Us
               </h1>
               <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                MalVQuest Overseas Educational Consultancy brings over two decades of expertise in guiding students toward achieving their dreams of higher education abroad. From medical school admissions in the Philippines to placements worldwide, we empower students to pursue quality education globally.
+                MalVQuest Overseas Educational Consultancy, with the rich experience in education industry for more than two decades focuses on guiding Asian students about the benefits of studying abroad. Starting with medical school admissions in the Philippines, the company now assists students in getting placed at various universities and programs worldwide.
               </p>
               <p class="text-lg text-gray-700 font-medium">
-                "Your dreams, our mission."
+                "Your Dreams,Our Mission" - MalVQuest
               </p>
             </div>
       
@@ -29,7 +98,7 @@
                 id="aboutus-img"
                 alt="Professional collaboration"
                 class="w-full max-w-md rounded-lg shadow-md"
-                src="https://www.shutterstock.com/image-photo/business-people-working-on-digital-600nw-2444897729.jpg"
+                src="./assets/about-us.jpg"
               />
             </div>
           </div>
@@ -78,7 +147,7 @@
 
 
     <!-- CONTACT SECTION -->
-    <p class="text-yellow-400 text-center text-4xl font-bold m-8">CONTACT US</p>
+    <p class="text-center text-4xl font-extrabold text-gray-800 m-8">CONTACT US</p>
     <section id="contact" class="relative py-10 lg:px-20 px-5 poppins-light">
         <!-- Background Overlay with Image -->
         <div class="absolute inset-0 bg-center bg-cover opacity-70" style="background-image: url('./assests/map.jpg');"></div>
@@ -107,7 +176,7 @@
                                 <a href="https://www.facebook.com/malvquest/" class="hover:opacity-80" target="_blank" rel="noopener noreferrer">
                                   <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
                                 </a>
-                                <a href="https://wa.me/919345509528?text=Hi,%20I%20would%20like%20to%20connect%20with%20you" 
+                                <a href="https://wa.me/91934550528?text=Hi,%20I%20would%20like%20to%20connect%20with%20you" 
                                    target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
                                   <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
                                 </a>                              
@@ -138,6 +207,8 @@
                 </p>
             </p>
         </div>
-    </section>    
+    </section> 
+    
+    <script src="script.js"></script>
 </body>
 </html>
