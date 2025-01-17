@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>MalVQuest-Development</title>
 </head>
 <body>
+    <!-- ABOUT US  -->
+    <section id="about" class="bg-white py-16">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Side (Content Section) -->
+            <div class="flex flex-col justify-center">
+              <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                About Us
+              </h1>
+              <p class="text-lg text-gray-600 leading-relaxed mb-4">
+                MalVQuest Overseas Educational Consultancy brings over two decades of expertise in guiding students toward achieving their dreams of higher education abroad. From medical school admissions in the Philippines to placements worldwide, we empower students to pursue quality education globally.
+              </p>
+              <p class="text-lg text-gray-700 font-medium">
+                "Your dreams, our mission."
+              </p>
+            </div>
+      
+            <div class="flex justify-center">
+              <img
+                id="aboutus-img"
+                alt="Professional collaboration"
+                class="w-full max-w-md rounded-lg shadow-md"
+                src="https://www.shutterstock.com/image-photo/business-people-working-on-digital-600nw-2444897729.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+
+    <!-- BOARD OF DIRECTORS  -->
+    <section id="directors" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 lg:px-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-800">Get to Know Our Directors</h2>
+            </div>
+            <div class="grid md:grid-cols-3 justify-center gap-12">
+                <!-- Managing Director -->
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
+                    <img src="./assets/malar.jpg" alt="Managing Director" class="w-40 h-40 rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">Mrs.Malar Viswanathan</h3>
+                    <p class="text-md text-gray-600">
+                        A linguist and educationist with over two decades of experience, she founded the company to help students study abroad. Inspired by her sons' MD program and global visits, she built a mission of reliability, honesty, and transparency.
+                    </p>
+                </div>
+                <!-- Executive Director -->
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
+                    <img src="./assets/vatsan.jpg" alt="Executive Director" class="w-40 h-40 rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">Dr.Vatsan Viswanathan</h3>
+                    <p class="text-md text-gray-600">
+                        A doctor and traveler, he helps students understand their skills and passions to shape their future. Graduated from Central American University, he inspires others through his expertise and experience.
+                    </p>
+                </div>
+                <!-- Director of Operations -->
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
+                    <img src="" alt="Director of Operations" class="w-40 h-40 rounded-full mb-4">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">Dr.Sylesh Viswanathan</h3>
+                    <p class="text-md text-gray-600">
+                        A doctor from Philippine Medical School, he supports students in selecting the right courses. Known for his excellent communication, he leads operations with motivation and inspiration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     
+      
+
+
+    <!-- CONTACT SECTION -->
+    <p class="text-yellow-400 text-center text-4xl font-bold m-8">CONTACT US</p>
+    <section id="contact" class="relative py-10 lg:px-20 px-5 poppins-light">
+        <!-- Background Overlay with Image -->
+        <div class="absolute inset-0 bg-center bg-cover opacity-70" style="background-image: url('./assests/map.jpg');"></div>
+        <div class="container relative mx-auto">
+            <div class="flex flex-wrap items-start lg:items-center lg:flex-nowrap">
+                <!-- Google Map Embed -->
+                <div class="w-full lg:w-1/2 p-3">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31351.15246552178!2d78.64099383811858!3d10.819418917524624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50dedf3ddf5%3A0xbacac366d08f02d4!2sSTUDY%20ABROAD%20MALVQUEST%20%26%20QUEST%20ACADEMY!5e0!3m2!1sen!2sin!4v1736823676186!5m2!1sen!2sin"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="w-full lg:w-1/2 p-3">
+                    <div class="relative p-6 text-black bg-white rounded-md shadow-lg bg-opacity-90">
+                        <h2 class="mb-4 text-2xl font-bold">MalVQuest</h2>
+                        <p class="mb-3">
+                            QUEST ACADEMY Building, 9B, First floor, Bharathidasan Salai, Cantonment, Trichy, Tamil Nadu - 620001. India.
+                        </p>
+                        <p class="mb-3">Mobile: +91 4314973737</p>
+                        <p class="mb-3">WhatsApp: +91 8870699983</p>
+                        <p class="mb-3">E-mail: info@malvquest.com</p>
+                        <div class="flex items-center space-x-4 mt-6">
+                            <div class="social-buttons flex space-x-4">
+                                <a href="https://www.facebook.com/malvquest/" class="hover:opacity-80" target="_blank" rel="noopener noreferrer">
+                                  <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+                                </a>
+                                <a href="https://wa.me/919345509528?text=Hi,%20I%20would%20like%20to%20connect%20with%20you" 
+                                   target="_blank" rel="noopener noreferrer" class="hover:opacity-80">
+                                  <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+                                </a>                              
+                                <a href="https://www.linkedin.com/company/malvquest/" class="hover:opacity-80" target="_blank" rel="noopener noreferrer">
+                                  <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" />
+                                </a>
+                                <a href="https://www.instagram.com/malvquest/" class="hover:opacity-80" target="_blank" rel="noopener noreferrer">
+                                  <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+                                </a>
+                              </div>                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="footer" class="bg-gray-100 py-8">
+        <div class="text-center">
+            <p class="text-lg">
+                © <script>document.write(new Date().getFullYear())</script>
+                All Rights Reserved by MalVQuest <br>
+                <p class="text-sm">
+                    Website Designed By
+                    <a href="https://www.linkedin.com/in/dhayananthgs" class="text-blue-500 hover:underline" target="_blank">Dhayananth</a> &
+                    <a href="https://www.linkedin.com/in/kishore-b/" class="text-blue-500 hover:underline" target="_blank">Kishore</a>
+                </p>
+            </p>
+        </div>
+    </section>    
 </body>
 </html>
