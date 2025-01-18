@@ -11,32 +11,32 @@
     <!-- HOME  -->
     <section id="home">
         <div class="h-screen w-full bg-cover bg-center fade" style="background-image: url('./assets/home-profile.jpg');">
-          <!-- Navbar -->
-          <nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
-            <div class="px-12 py-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
-              <div class="flex items-center justify-between">
-                <a href="#" class="text-2xl font-bold text-gray-900">
-                  <img src="./assets/Logo.jpg" class="w-20 h-30" alt="Logo">
-                </a>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                  <button id="sidebarOpen" class="hover:text-yellow-400 focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
+            <!-- Navbar -->
+            <nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
+                <div class="px-12 py-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-2xl font-bold text-gray-900">
+                            <img src="./assets/Logo.jpg" class="w-20 h-30" alt="Logo">
+                        </a>
+                        <!-- Mobile menu button -->
+                        <div class="md:hidden">
+                            <button id="sidebarOpen" class="hover:text-yellow-400 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Links for Desktop -->
+                        <div class="items-center hidden md:flex md:space-x-8 playfair-display">
+                            <a href="#home" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md">HOME</a>
+                            <a href="#about" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">ABOUT US</a>
+                            <a href="#services" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">SERVICES</a>
+                            <a href="#countries" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">COUNTRIES</a>
+                            <a href="#contact" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">CONTACT US</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Links for Desktop -->
-                <div class="items-center hidden md:flex md:space-x-8 playfair-display">
-                  <a href="#home" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md">HOME</a>
-                  <a href="#about" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">ABOUT US</a>
-                  <a href="#services" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">SERVICES</a>
-                  <a href="#countries" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">COUNTRIES</a>
-                  <a href="#contact" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">CONTACT US</a>
-                </div>
-              </div>
-            </div>
-          </nav>
+            </nav>
       
             <!-- Slideshow container -->
             <div class="flex flex-col items-center justify-center min-h-screen overflow-hidden" id="slideshow-container">
@@ -54,25 +54,25 @@
           
       
           <!-- Sidebar for Mobile -->
-          <div id="sidebar" class="fixed inset-0 z-50 w-64 text-white transition-transform duration-300 ease-in-out transform -translate-x-full bg-black md:hidden">
-            <div class="flex items-center justify-between px-4 py-4 border-b border-gray-700">
-              <h2 class="text-lg font-bold">Menu</h2>
-              <button id="sidebarClose" class=" focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+            <div id="sidebar" class="fixed inset-0 z-50 w-64 text-white transition-transform duration-300 ease-in-out transform -translate-x-full bg-black md:hidden">
+                <div class="flex items-center justify-between px-4 py-4 border-b border-gray-700">
+                    <h2 class="text-lg font-bold">Menu</h2>
+                    <button id="sidebarClose" class=" focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    </div>
+                    <div class="p-4 space-y-6">
+                        <a href="#home" class="block text-white font-semibold hover:text-yellow-400 poppins-light">HOME</a>
+                        <a href="#about" class="block text-white font-semibold hover:text-yellow-400 poppins-light">ABOUT US</a>
+                        <a href="#services" class="block text-white font-semibold hover:text-yellow-400 poppins-light">SERVICES</a>
+                        <a href="#countries" class="block text-white font-semibold hover:text-yellow-400 poppins-light">COUNTRIES</a>
+                        <a href="#contact" class="block text-white font-semibold hover:text-yellow-400 poppins-light">CONTACT US</a>
+                    </div>
+                </div>
             </div>
-            <div class="p-4 space-y-6">
-              <a href="#home" class="block text-white font-semibold hover:text-yellow-400 poppins-light">HOME</a>
-              <a href="#about" class="block text-white font-semibold hover:text-yellow-400 poppins-light">ABOUT US</a>
-              <a href="#services" class="block text-white font-semibold hover:text-yellow-400 poppins-light">SERVICES</a>
-              <a href="#countries" class="block text-white font-semibold hover:text-yellow-400 poppins-light">COUNTRIES</a>
-              <a href="#contact" class="block text-white font-semibold hover:text-yellow-400 poppins-light">CONTACT US</a>
-            </div>
-          </div>
-        </div>
-      </section>
+    </section>
       
 
 
@@ -80,33 +80,60 @@
     <!-- ABOUT US  -->
     <section id="about" class="bg-white py-16">
         <div class="max-w-5xl mx-auto px-6 lg:px-8">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="flex flex-col justify-center">
-              <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6">
-                About Us
-              </h1>
-              <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                MalVQuest Overseas Educational Consultancy, with the rich experience in education industry for more than two decades focuses on guiding Asian students about the benefits of studying abroad. Starting with medical school admissions in the Philippines, the company now assists students in getting placed at various universities and programs worldwide.
-              </p>
-              <p class="text-lg text-gray-700 font-medium">
-                "Your Dreams,Our Mission" - MalVQuest
-              </p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-6">About Us</h1>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
+                        MalVQuest Overseas Educational Consultancy, with the rich experience in education industry for more than two decades focuses on guiding Asian students about the benefits of studying abroad. Starting with medical school admissions in the Philippines, the company now assists students in getting placed at various universities and programs worldwide.
+                    </p>
+                    <p class="text-lg text-gray-700 font-medium"> "Your Dreams,Our Mission" - MalVQuest</p>
+                </div>
+                <div class="flex justify-center">
+                    <img
+                        id="aboutus-img"
+                        alt="Professional collaboration"
+                        class="w-full max-w-md rounded-lg shadow-md"
+                        src="./assets/about-us.jpg"
+                    />
+                </div>
             </div>
-      
-            <div class="flex justify-center">
-              <img
-                id="aboutus-img"
-                alt="Professional collaboration"
-                class="w-full max-w-md rounded-lg shadow-md"
-                src="./assets/about-us.jpg"
-              />
+        </div>
+    </section>
+
+
+    <!-- PRIDE  -->
+    <section id="our-values" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 sm:px-12 lg:px-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold sm:text-4xl lg:text-5xl">We Pride Ourselves on Our Values</h2>
             </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-lg">
+                    <img src="./assets/Excellence.svg" alt="Excellence Icon" class="w-16 h-16 mb-4">
+                    <h3 class="text-lg font-semibold">Excellence</h3>
+                </div>
+                <div class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-lg">
+                    <img src="./assets/Personalization.svg" alt="Personalization Icon" class="w-16 h-16 mb-4">
+                    <h3 class="text-lg font-semibold">Personalization</h3>
+                </div>
+                <div class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-lg">
+                    <img src="./assets/Transparency.svg" alt="Transparency Icon" class="w-16 h-16 mb-4">
+                    <h3 class="text-lg font-semibold">Transparency</h3>
+                </div>
+                <div class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-lg">
+                    <img src="./assets/Integrity.svg" alt="Integrity Icon" class="w-16 h-16 mb-4">
+                    <h3 class="text-lg font-semibold">Integrity</h3>
+                </div>
+                <div class="flex flex-col items-center p-6 text-center bg-white shadow-md rounded-lg">
+                    <img src="./assets/Reliability.svg" alt="Reliability Icon" class="w-16 h-16 mb-4">
+                    <h3 class="text-lg font-semibold">Reliability</h3>
+                </div>
           </div>
         </div>
-      </section>
+    </section>
       
       
-
+      
 
     <!-- BOARD OF DIRECTORS  -->
     <section id="directors" class="py-16 bg-gray-50">
@@ -116,24 +143,24 @@
             </div>
             <div class="grid md:grid-cols-3 justify-center gap-12">
                 <!-- Managing Director -->
-                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
-                    <img src="./assets/malar.jpg" alt="Managing Director" class="w-40 h-40 rounded-full mb-4">
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[350px]">
+                    <img src="./assets/malar.jpg" alt="Managing Director" class="w-44 h-44 rounded-full mb-4">
                     <h3 class="text-2xl font-bold text-blue-600 mb-2">Mrs.Malar Viswanathan</h3>
                     <p class="text-md text-gray-600">
                         A linguist and educationist with over two decades of experience, she founded the company to help students study abroad. Inspired by her sons' MD program and global visits, she built a mission of reliability, honesty, and transparency.
                     </p>
                 </div>
                 <!-- Executive Director -->
-                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
-                    <img src="./assets/vatsan.jpg" alt="Executive Director" class="w-40 h-40 rounded-full mb-4">
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[350px]">
+                    <img src="./assets/vatsan.jpg" alt="Executive Director" class="w-44 h-44 rounded-full mb-4">
                     <h3 class="text-2xl font-bold text-blue-600 mb-2">Dr.Vatsan Viswanathan</h3>
                     <p class="text-md text-gray-600">
                         A doctor and traveler, he helps students understand their skills and passions to shape their future. Graduated from Central American University, he inspires others through his expertise and experience.
                     </p>
                 </div>
                 <!-- Director of Operations -->
-                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[300px]">
-                    <img src="" alt="Director of Operations" class="w-40 h-40 rounded-full mb-4">
+                <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center w-[350px]">
+                    <img src="./assets/sylesh.jpg" alt="Director of Operations" class="w-44 h-44 rounded-full mb-4">
                     <h3 class="text-2xl font-bold text-blue-600 mb-2">Dr.Sylesh Viswanathan</h3>
                     <p class="text-md text-gray-600">
                         A doctor from Philippine Medical School, he supports students in selecting the right courses. Known for his excellent communication, he leads operations with motivation and inspiration.
@@ -142,6 +169,35 @@
             </div>
         </div>
     </section>
+
+
+
+    <!-- MISSION AND VISION  -->
+    <section class="py-12 px-6">
+      <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="bg-white shadow-lg rounded-lg p-6 flex items-center">
+                  <img src="./assets/vision.svg" alt="Vision Image" class="w-20 h-20 object-cover rounded-lg mr-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-blue-600 mb-4">Our Vision</h2>
+                        <p class="text-gray-600 text-base">
+                            We exist to create and serve as a bridge to connect students and international universities by providing the highest quality services and an absolute customer experience in a harmonious way.
+                        </p>
+                    </div>
+              </div>
+              <div class="bg-white shadow-lg rounded-lg p-6 flex items-center">
+                  <img src="./assets/mission.svg" alt="Mission Image" class="w-20 h-20 object-cover rounded-lg mr-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-blue-600 mb-4">Our Mission</h2>
+                        <p class="text-gray-600 text-base">
+                            We establish a good relationship with our students through clear communication, an easy and quick approach in a simplified process without complexities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
     
       
 
@@ -160,8 +216,6 @@
                         width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-
-                <!-- Contact Details -->
                 <div class="w-full lg:w-1/2 p-3">
                     <div class="relative p-6 text-black bg-white rounded-md shadow-lg bg-opacity-90">
                         <h2 class="mb-4 text-2xl font-bold">MalVQuest</h2>
@@ -186,7 +240,7 @@
                                 <a href="https://www.instagram.com/malvquest/" class="hover:opacity-80" target="_blank" rel="noopener noreferrer">
                                   <img class="w-10 h-10" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
                                 </a>
-                              </div>                              
+                            </div>                              
                         </div>
                     </div>
                 </div>
@@ -194,7 +248,7 @@
         </div>
     </section>
 
-
+    <!-- FOOTER  -->
     <section id="footer" class="bg-gray-100 py-8">
         <div class="text-center">
             <p class="text-lg">
