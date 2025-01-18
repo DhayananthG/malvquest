@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            Stackfindover: Sign in
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    </head>
+    <body class="min-h-screen bg-white flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img alt="Abstract background image with blue and white gradient patterns" class="w-full h-full object-cover" height="100%" src="./assets/form.jpg" width="100%"/>
+        </div>
+        <div id="form-main" class="relative z-10 w-full max-w-md p-8 bg-black rounded-lg shadow-lg bg-opacity-30">
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-bold" style="color:rgb(0, 0, 0); font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    <a href="index.html" rel="dofollow">
+                    MalvQuest
+                    </a>
+                </h1>
+            </div>
+            <form id="submit-to-google-sheet">
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700" for="name">Name</label>
+                  <input id="name"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    name="Name"
+                    type="text"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+                  <input id="email"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    name="Email"
+                    type="email"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700" for="mobile">Mobile</label>
+                  <input id="mobile"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    name="Mobile"
+                    type="tel"
+                    value="+91 "
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label class="block text-sm font-medium text-gray-700" for="query">Your Query</label>
+                  <textarea id="query"
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    name="Query"
+                    required
+                  ></textarea>
+                </div>
+                <div>
+                  <input
+                    class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+                    name="submit"
+                    type="submit"
+                    value="Book Now"
+                  />
+                </div>
+              </form>
+              <div id="msgg"></div>
+
+              <script>
+                const scriptURL =                       
+                "https://script.google.com/macros/s/AKfycbw8lrd_i81uKeBMbVoxAbMjY8J1U1atCgIwOcO4TeJICcLA8ylzb5gCj_sXseAK2Tkrqg/exec";
+                const form = document.forms["submit-to-google-sheet"];
+                form.addEventListener("submit", (e) => {
+                  e.preventDefault();
+                  var formData = new FormData(form);
+                  var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var mobile = document.getElementById("mobile").value;
+                var query = document.getElementById("query").value;
+
+                // Append values to the formData
+                formData.append("Name", name);
+                formData.append("Email", email);
+                formData.append("Mobile", mobile);
+                formData.append("Query", query);
+                console.log('FormData:', formData);
+
+                  fetch(scriptURL, { method: "POST", body: formData })
+                    .then((response) => {
+                        formData.forEach((value, key) => {
+                            console.log(key + ": " + value);
+                        });
+                        msgg.innerHTML="Message Sent Successfully"
+                        form.reset()
+                        setTimeout(function(){
+                            msgg.innerHTML=""
+                        },4000)
+                    })
+                    .catch((error) => {
+                      msgg.innerHTML="NotSuccessfully"
+                    });
+                });
+              </script>
+            <div class="mt-6 text-center">
+                <span class="text-sm">
+                Go to home page
+                <a class="font-medium text-indigo-600 hover:text-indigo-500" href="index.html" style="color: rgb(85, 93, 168);">
+                Home
+                </a>
+                </span>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <span class="text-sm">
+                    <a class="font-medium text-indigo-600 hover:text-indigo-500" href="index.html" style="color: rgb(59, 59, 59);">
+                    © MallQuest
+                    </a>
+                    </span>
+                    <span class="text-sm">
+                    <a class="font-medium text-indigo-600 hover:text-indigo-500" href="index.html#contact" style="color: rgb(59, 59, 59);">
+                    Contact
+                    </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
