@@ -57,3 +57,16 @@ let texts = [
     }
   });
   
+
+  const serviceNavbar = document.getElementById('service-navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      serviceNavbar.classList.add('bg-white', 'text-black'); // Adds white background and text black color
+      serviceNavbar.classList.remove('bg-transparent'); // Removes transparent background and white text
+    } else {
+      serviceNavbar.classList.add('bg-transparent'); // Restores initial styles
+      serviceNavbar.classList.remove('bg-white', 'text-black'); // Removes white background and black text
+    }
+  });
+  
