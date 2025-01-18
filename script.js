@@ -11,12 +11,11 @@ let texts = [
     "From Here to Anywhere – Study Abroad!"
   ];
   
-  let textElement = document.getElementById('animated-text');
+let textElement = document.getElementById('animated-text');
+let num = 0;
+const n = texts.length;
   
-  let num = 0;
-  const n = texts.length;
-  
-  const change_text = () => {
+const change_text = () => {
     textElement.innerText = texts[num];
   
     // Animate text
