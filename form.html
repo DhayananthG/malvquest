@@ -3,7 +3,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8"/>
       <title>
-         Stackfindover: Sign in
+         MalVQuest - Query Form
       </title>
       <script src="https://cdn.tailwindcss.com"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -16,8 +16,8 @@
          width: 100%;
          max-width: 28rem;
          padding: 2rem;
-         background-color: rgba(0, 0, 0, 0.3); 
-         border-radius: 0.5rem;
+         background-color: rgba(255, 255, 255, 0.8); 
+         border-radius: 1rem;
          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)
          }
          @media only screen and (max-width:600px){
@@ -31,35 +31,33 @@
       </div>
       <div id="form-main" class="">
          <div class="text-center mb-6">
-            <h1 class="text-3xl font-bold" style="color:rgb(0, 0, 0); font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-               <a href="index.html" rel="dofollow">
-               MalvQuest
-               </a>
-            </h1>
+            <p class="text-3xl font-bold" >
+               <a href="index.html" rel="dofollow">MalVQuest</a>
+            </p>
          </div>
          <form id="submit-to-google-sheet">
             <div class="mb-4">
-               <label class="block text-sm font-medium text-gray-700" for="name">Name</label>
+               <label class="block text-md font-medium" for="name">Name</label>
                <input id="name"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   name="Name"
                   type="text"
                   required
                   />
             </div>
             <div class="mb-4">
-               <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+               <label class="block text-md font-medium" for="email">Email</label>
                <input id="email"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   name="Email"
                   type="email"
                   required
                   />
             </div>
             <div class="mb-4">
-               <label class="block text-sm font-medium text-gray-700" for="mobile">Mobile</label>
+               <label class="block text-md font-medium" for="mobile">Mobile</label>
                <input id="mobile"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   name="Mobile"
                   type="tel"
                   value="+91 "
@@ -67,9 +65,9 @@
                   />
             </div>
             <div class="mb-4">
-               <label class="block text-sm font-medium text-gray-700" for="query">Your Query</label>
+               <label class="block text-md font-medium" for="query">Your Query</label>
                <textarea id="query"
-                  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   name="Query"
                   required
                   ></textarea>
@@ -120,11 +118,9 @@
             });
          </script>
          <div class="mt-6 text-center">
-            <span class="text-sm">
-            Go to home page
-            <a class="font-medium text-indigo-600 hover:text-indigo-500" href="index.html" style="color: rgb(85, 93, 168);">
-            Home
-            </a>
+            <span class="text-md">
+                Go to Home Page
+                <a class="font-medium text-indigo-600 hover:text-indigo-500" href="index.html" style="color: rgb(85, 93, 168);">Home</a>
             </span>
             <div class="mt-4 flex justify-center space-x-4">
                <span class="text-sm">
