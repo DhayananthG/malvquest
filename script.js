@@ -4,11 +4,11 @@ let texts = [
     "Dream Bigger, Study Further!",
     "Your Global Journey Begins Today!",
     "Higher Studies, Higher Horizons!",
-    "Discover, Learn, Conquer – Abroad!",
-    "Step Out, Stand Out – Study Abroad!",
+    "Discover, Learn, Conquer!",
+    "Step Out, Stand Out!",
     "Expand Minds, Explore Borders!",
     "Think Global, Learn Universal!",
-    "From Here to Anywhere – Study Abroad!"
+    "From Here to Anywhere!"
   ];
   
 let textElement = document.getElementById('animated-text');
