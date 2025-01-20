@@ -69,3 +69,25 @@ const change_text = () => {
     }
   });
   
+
+
+
+
+  // Hide loader and show content when the page finishes loading
+window.onload = function () {
+    const loader = document.getElementById('loader-container');
+    const content = document.getElementById('content');
+    
+    // Hide loader
+    loader.style.display = 'none';
+    
+    // Show content
+    content.style.display = 'block';
+  };
+  
+
+
+
+
+
+  
