@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const sidebar = document.getElementById('sidebar');
 const sidebarOpen = document.getElementById('sidebarOpen');
 const sidebarClose = document.getElementById('sidebarClose');
-
 sidebarOpen.addEventListener('click', () => {
     sidebar.classList.remove('-translate-x-full');
 });
@@ -57,16 +56,27 @@ window.addEventListener('scroll', () => {
 });
 
 const serviceNavbar = document.getElementById('service-navbar');
-
 window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-        serviceNavbar.classList.add('bg-white', 'text-black'); // Adds white background and text black color
-        serviceNavbar.classList.remove('bg-transparent'); // Removes transparent background and white text
+        serviceNavbar.classList.add('bg-white', 'text-black'); 
+        serviceNavbar.classList.remove('bg-transparent'); 
     } else {
-        serviceNavbar.classList.add('bg-transparent'); // Restores initial styles
-        serviceNavbar.classList.remove('bg-white', 'text-black'); // Removes white background and black text
+        serviceNavbar.classList.add('bg-transparent'); 
+        serviceNavbar.classList.remove('bg-white', 'text-black'); 
     }
 });
+
+const countriesNavbar = document.getElementById('countries-navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+        countriesNavbar.classList.add('bg-white', 'text-black'); 
+        countriesNavbar.classList.remove('bg-transparent'); 
+    } else {
+        countriesNavbar.classList.add('bg-transparent'); 
+        countriesNavbar.classList.remove('bg-white', 'text-black'); 
+    }
+});
+
 
 // Hide loader and show content when the page finishes loading
 window.onload = function () {

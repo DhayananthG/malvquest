@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet"/>
+    <link href="./index.css" rel="stylesheet"/>
     <title>MalVQuest - Services</title>
 </head>
 <body>
+    <!-- LOADER FOR HOME PAGE  -->
+    <div id="loader-container">
+        <figure class="loader">
+          <div class="dot white"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </figure>
+    </div>
+
+    <!-- Div Block to wrap the content to hide initialy to display Loader  -->
+    <div id="content" style="display: none;">
     <section id="home">
         <div class="h-screen w-full bg-cover bg-center fade service-bg" style="background-image: url(./assets/service-profile.jpg);">
             <!-- Navbar -->
@@ -27,11 +40,11 @@
                         </div>
                         <!-- Links for Desktop -->
                         <div class="items-center hidden md:flex md:space-x-8 playfair-display">
-                            <a href="./index.html#home" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md">HOME</a>
-                            <a href="./index.html#about" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">ABOUT US</a>
-                            <a href="./services.html" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">SERVICES</a>
-                            <a href="./countries.html" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">COUNTRIES</a>
-                            <a href="./index.html#contact" class="px-3 font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">CONTACT US</a>
+                            <a href="./index.html#home" class="px-3 font-bold transition duration-300 ease-in-out rounded-md text-md">HOME</a>
+                            <a href="./index.html#about" class="px-3 font-bold transition duration-300 ease-in-out rounded-md text-md poppins-light">ABOUT US</a>
+                            <a href="./services.html" class="px-3 font-bold transition duration-300 ease-in-out rounded-md text-md poppins-light">SERVICES</a>
+                            <a href="./countries.html" class="px-3 font-bold transition duration-300 ease-in-out rounded-md text-md poppins-light">COUNTRIES</a>
+                            <a href="./index.html#contact" class="px-3 font-bold transition duration-300 ease-in-out rounded-md text-md poppins-light">CONTACT US</a>
                         </div>
                     </div>
                 </div>
@@ -71,6 +84,7 @@
             </div>
         </div>
     </section>
+    
     
     
 
@@ -253,7 +267,7 @@
             </p>
         </div>
     </section> 
-
+    </div>
     
     <script src="./script.js"></script>
 </body>
