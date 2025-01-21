@@ -4,12 +4,352 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./style.css" rel="stylesheet"/>
-    <title>MalVQuest - Countries</title>
+    <title>Countries and Universities</title>
+    <script src="script.js"></script>
 </head>
-<body>
-    <!-- FOOTER  -->
-    <section id="footer" class="bg-gray-100 py-8">
+<body class="bg-gray-100">
+<style>
+    body {
+        padding-top: 70px;
+    }
+</style>
+<script>
+    const sidebar = document.getElementById('sidebar');
+  const sidebarOpen = document.getElementById('sidebarOpen');
+  const sidebarClose = document.getElementById('sidebarClose');
+  
+  sidebarOpen.addEventListener('click', () => {
+    sidebar.classList.remove('-translate-x-full');
+  });
+  
+  sidebarClose.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
+  });
+  
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('bg-white', 'shadow-md', 'text-black');
+      navbar.classList.remove('bg-transparent', 'text-white');
+    } else {
+      navbar.classList.add('bg-transparent', 'text-white');
+      navbar.classList.remove('bg-white', 'shadow-md', 'text-black');
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      serviceNavbar.classList.add('bg-white', 'text-black'); // Adds white background and text black color
+      serviceNavbar.classList.remove('bg-transparent'); // Removes transparent background and white text
+    } else {
+      serviceNavbar.classList.add('bg-transparent'); // Restores initial styles
+      serviceNavbar.classList.remove('bg-white', 'text-black'); // Removes white background and black text
+    }
+  });
+</script>
+
+<nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
+                <div class="px-12 py-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between">
+                        <a href="index.html" class="text-2xl font-bold text-gray-900">
+                            <img src="./assets/Logo.jpg" class="w-20 h-30" alt="Logo">
+                        </a>
+                        <!-- Mobile menu button -->
+                        <div class="md:hidden">
+                            <button id="sidebarOpen" class="hover:text-yellow-400 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Links for Desktop -->
+                        <div id="inner-div" class="items-center hidden md:flex md:space-x-8 playfair-display">
+                            <a href="index.html#home" class="px-3 text-black font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md">HOME</a>
+                            <a href="index.html#about" class="px-3 text-black font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">ABOUT US</a>
+                            <a href="./services.html" class="px-3 text-black font-bold transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">SERVICES</a>
+                            <a href="./countries.html" class="px-3 font-bold text-black transition duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">COUNTRIES</a>
+                            <a href="index.html#contact" class="px-3 font-bold transition text-black duration-300 ease-in-out rounded-md hover:text-yellow-400 text-md poppins-light">CONTACT US</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+    <div class="container mx-auto p-5">
+        <h1 class="text-3xl font-bold mb-5">Countries and Universities</h1>
+        <div id="country-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+
+    <script>
+        const data = {
+    "USA": {
+        image: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        universities: [
+            {
+                name: "Harvard University",
+                characteristics: [
+                    "Founded in 1636.",
+                    "Located in Cambridge, Massachusetts.",
+                    "One of the Ivy League schools."
+                ]
+            },
+            {
+                name: "Stanford University",
+                characteristics: [
+                    "Founded in 1885.",
+                    "Located in Stanford, California.",
+                    "Known for its academic strength."
+                ]
+            }
+        ]
+    },
+    "UK": {
+        image: "https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg?cs=srgb&dl=pexels-chaitaastic-1796715.jpg&fm=jpg",
+        universities: [
+            {
+                name: "University of Oxford",
+                characteristics: [
+                    "Founded in 1096.",
+                    "Located in Oxford, England.",
+                    "The oldest university in the English-speaking world."
+                ]
+            },
+            {
+                name: "University of Cambridge",
+                characteristics: [
+                    "Founded in 1209.",
+                    "Located in Cambridge, England.",
+                    "Known for its rigorous admission process."
+                ]
+            }
+        ]
+    },
+    "Australia": {
+        "image": "https://t4.ftcdn.net/jpg/02/43/44/69/360_F_243446992_dlh2txwxYqNIF9jtZeUN5muF3eA7ngnH.jpg",
+        "universities": [
+            {
+                "name": "University of Melbourne",
+                "characteristics": [
+                    "Located in Parkville.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Canada": {
+        "image": "",
+        "universities": [
+            {
+                "name": "University of Toronto",
+                "characteristics": [
+                    "Located in Toronto.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "France": {
+        "image": "",
+        "universities": [
+            {
+                "name": "Universite Paris Cite",
+                "characteristics": [
+                    "Located in Paris.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Germany": {
+        "image": "",
+        "universities": [
+            {
+                "name": "Humboldt University of Berlin",
+                "characteristics": [
+                    "Located in Berlin.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Ireland": {
+        "image": "",
+        "universities": [
+            {
+                "name": "Trinity College",
+                "characteristics": [
+                    "Located in Dublin.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Italy": {
+        "image": "",
+        "universities": [
+            {
+                "name": "University of Bolgana",
+                "characteristics": [
+                    "Located in Bolgana.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Malta": {
+        "image": "",
+        "universities": [
+            {
+                "name": "University of Malta",
+                "characteristics": [
+                    "Located in Msida.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Netherlands": {
+        "image": "",
+        "universities": [
+            {
+                "name": "University of Amsterdam",
+                "characteristics": [
+                    "Located in Amsterdam.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "New Zealand": {
+        "image": "",
+        "universities": [
+            {
+                "name": "University of Auckland",
+                "characteristics": [
+                    "Located in Auckland.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Poland": {
+        "image": "",
+        "universities": [
+            {
+                "name": "Jagiellonian University",
+                "characteristics": [
+                    "Located in Krakow.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Singapore": {
+        "image": "",
+        "universities": [
+            {
+                "name": "National University of Singapore",
+                "characteristics": [
+                    "Located in Singapore.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Sweden": {
+        "image": "",
+        "universities": [
+            {
+                "name": "Karolinska Institutet",
+                "characteristics": [
+                    "Located in Stockholm.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+    "Switzerland": {
+        "image": "",
+        "universities": [
+            {
+                "name": "ETH Zurich",
+                "characteristics": [
+                    "Located in Zurich.",
+                    "Rank: 1.0"
+                ]
+            }
+        ]
+    },
+};
+
+
+function displayCountries() {
+    const countryList = document.getElementById('country-list');
+    countryList.innerHTML = ''; // Clear previous content
+    for (const country in data) {
+        const countryDiv = document.createElement('div');
+        countryDiv.className = "relative w-full h-64 rounded overflow-hidden shadow cursor-pointer group"; // Set up container
+        
+        countryDiv.onclick = () => displayUniversities(country); // Attach click event
+        
+        countryDiv.innerHTML = `
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300 group-hover:scale-110" style="background-image: url('${data[country].image}');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 z-10 text-white">
+                <h2 class="text-2xl font-semibold">${country}</h2>
+            </div>
+        `;
+        
+        countryList.appendChild(countryDiv);
+    }
+}
+
+
+
+
+        function displayUniversities(country) {
+            const countryDiv = document.getElementById('country-list');
+            countryDiv.innerHTML = ''; // Clear previous content
+            const universities = data[country].universities;
+
+            // Add back button to return to countries
+            const backButton = document.createElement('button');
+            backButton.className = "mb-4 bg-blue-500 text-white px-4 py-2 rounded";
+            backButton.innerText = "Back to Countries";
+            backButton.onclick = displayCountries;
+            countryDiv.appendChild(backButton);
+
+            universities.forEach(university => {
+                const uniDiv = document.createElement('div');
+                uniDiv.className = "bg-white p-4 rounded shadow hover:shadow-lg transition mb-4";
+                uniDiv.innerHTML = `<h3 class="text-lg font-semibold cursor-pointer" onclick="displayCharacteristics('${country}', '${university.name}')">${university.name}</h3>`;
+                countryDiv.appendChild(uniDiv);
+            });
+        }
+
+        function displayCharacteristics(country, universityName) {
+            const countryDiv = document.getElementById('country-list');
+            countryDiv.innerHTML = ''; // Clear previous content
+            const university = data[country].universities.find(uni => uni.name === universityName);
+
+            university.characteristics.forEach(characteristic => {
+                const charDiv = document.createElement('div');
+                charDiv.className = "bg-white p-4 rounded shadow mb-4";
+                charDiv.innerHTML = `<p>${characteristic}</p>`;
+                countryDiv.appendChild(charDiv);
+            });
+
+            // Add back button to return to universities
+            const backButton = document.createElement('button');
+            backButton.className = "mt-4 bg-blue-500 text-white px-4 py-2 rounded";
+            backButton.innerText = "Back to Universities";
+            backButton.onclick = () => displayUniversities(country);
+            countryDiv.appendChild(backButton);
+        }
+
+        // Initialize the display
+        displayCountries();
+    </script>
+	<section id="footer" class="bg-gray-100 py-8">
         <div class="text-center">
             <p class="text-lg">
                 © <script>document.write(new Date().getFullYear())</script>
@@ -22,8 +362,5 @@
             </p>
         </div>
     </section> 
-
-    
-    <script src="./script.js"></script>
 </body>
 </html>
