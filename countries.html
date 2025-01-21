@@ -48,7 +48,7 @@
   });
 </script>
 
-<nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
+            <nav id="navbar" class="fixed top-0 left-0 z-10 w-full py-2 transition duration-300 bg-transparent text-white">
                 <div class="px-12 py-4 mx-auto max-w-6xl sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between">
                         <a href="index.html" class="text-2xl font-bold text-gray-900">
@@ -74,293 +74,523 @@
                 </div>
             </nav>
 
-    <div class="container mx-auto p-5">
-        <h1 class="text-3xl font-bold mb-5">Countries and Universities</h1>
-        <div id="country-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-    </div>
-
-    <script>
-        const data = {
-    "USA": {
-        image: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        universities: [
-            {
-                name: "Harvard University",
-                characteristics: [
-                    "Founded in 1636.",
-                    "Located in Cambridge, Massachusetts.",
-                    "One of the Ivy League schools."
-                ]
-            },
-            {
-                name: "Stanford University",
-                characteristics: [
-                    "Founded in 1885.",
-                    "Located in Stanford, California.",
-                    "Known for its academic strength."
-                ]
-            }
-        ]
-    },
-    "UK": {
-        image: "https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg?cs=srgb&dl=pexels-chaitaastic-1796715.jpg&fm=jpg",
-        universities: [
-            {
-                name: "University of Oxford",
-                characteristics: [
-                    "Founded in 1096.",
-                    "Located in Oxford, England.",
-                    "The oldest university in the English-speaking world."
-                ]
-            },
-            {
-                name: "University of Cambridge",
-                characteristics: [
-                    "Founded in 1209.",
-                    "Located in Cambridge, England.",
-                    "Known for its rigorous admission process."
-                ]
-            }
-        ]
-    },
-    "Australia": {
-        "image": "https://t4.ftcdn.net/jpg/02/43/44/69/360_F_243446992_dlh2txwxYqNIF9jtZeUN5muF3eA7ngnH.jpg",
-        "universities": [
-            {
-                "name": "University of Melbourne",
-                "characteristics": [
-                    "Located in Parkville.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Canada": {
-        "image": "",
-        "universities": [
-            {
-                "name": "University of Toronto",
-                "characteristics": [
-                    "Located in Toronto.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "France": {
-        "image": "",
-        "universities": [
-            {
-                "name": "Universite Paris Cite",
-                "characteristics": [
-                    "Located in Paris.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Germany": {
-        "image": "",
-        "universities": [
-            {
-                "name": "Humboldt University of Berlin",
-                "characteristics": [
-                    "Located in Berlin.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Ireland": {
-        "image": "",
-        "universities": [
-            {
-                "name": "Trinity College",
-                "characteristics": [
-                    "Located in Dublin.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Italy": {
-        "image": "",
-        "universities": [
-            {
-                "name": "University of Bolgana",
-                "characteristics": [
-                    "Located in Bolgana.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Malta": {
-        "image": "",
-        "universities": [
-            {
-                "name": "University of Malta",
-                "characteristics": [
-                    "Located in Msida.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Netherlands": {
-        "image": "",
-        "universities": [
-            {
-                "name": "University of Amsterdam",
-                "characteristics": [
-                    "Located in Amsterdam.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "New Zealand": {
-        "image": "",
-        "universities": [
-            {
-                "name": "University of Auckland",
-                "characteristics": [
-                    "Located in Auckland.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Poland": {
-        "image": "",
-        "universities": [
-            {
-                "name": "Jagiellonian University",
-                "characteristics": [
-                    "Located in Krakow.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Singapore": {
-        "image": "",
-        "universities": [
-            {
-                "name": "National University of Singapore",
-                "characteristics": [
-                    "Located in Singapore.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Sweden": {
-        "image": "",
-        "universities": [
-            {
-                "name": "Karolinska Institutet",
-                "characteristics": [
-                    "Located in Stockholm.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-    "Switzerland": {
-        "image": "",
-        "universities": [
-            {
-                "name": "ETH Zurich",
-                "characteristics": [
-                    "Located in Zurich.",
-                    "Rank: 1.0"
-                ]
-            }
-        ]
-    },
-};
-
-
-function displayCountries() {
-    const countryList = document.getElementById('country-list');
-    countryList.innerHTML = ''; // Clear previous content
-    for (const country in data) {
-        const countryDiv = document.createElement('div');
-        countryDiv.className = "relative w-full h-64 rounded overflow-hidden shadow cursor-pointer group"; // Set up container
-        
-        countryDiv.onclick = () => displayUniversities(country); // Attach click event
-        
-        countryDiv.innerHTML = `
-            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300 group-hover:scale-110" style="background-image: url('${data[country].image}');"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 left-4 z-10 text-white">
-                <h2 class="text-2xl font-semibold">${country}</h2>
+            <div id="backer" class="container mx-auto p-5">
+                <h1 class="text-3xl font-bold mb-5">Countries and Universities</h1>
+                <div id="country-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
             </div>
-        `;
-        
-        countryList.appendChild(countryDiv);
-    }
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
+            <style>
+                .cntry:hover{
+                    transform: scale(1.05)
+                }
+                .back-menu {
+                    position: fixed; /* Fixed position for consistent placement */
+                    top: 80px; /* Adjust to below the nav bar height */
+                    left: 20px; /* Add padding from the left */
+                    z-index: 10; /* Ensure it doesn't overlap other elements */
+                    display: flex;
+                    align-items: center;
+                    gap: 8px; /* Space between the icon and text */
+                    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+                    padding: 10px 15px; /* Add padding for better click area */
+                    border-radius: 8px; /* Rounded corners */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                    cursor: pointer; /* Indicate it's clickable */
+                    transition: transform 0.2s ease, background 0.2s ease;
+                }
+
+                .back-menu:hover {
+                    background-color: rgba(255, 255, 255, 1); /* Slightly brighter on hover */
+                    transform: scale(1.05); /* Subtle zoom effect */
+                }
+
+                @media (max-width: 768px) {
+                    .back-menu {
+                        top: 60px; /* Adjust for smaller nav bar height on mobile */
+                        left: 10px; /* Reduce left padding for mobile */
+                        padding: 8px 12px; /* Smaller padding for mobile */
+                    }
+                }
+
+                .material-symbols-outlined {
+                    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 40;
+                    cursor: pointer;
+                    color: #1e40af; /* Tailwind's blue-700 */
+                    transition: color 0.3s ease;
+                }
+            
+                .material-symbols-outlined:hover {
+                    color: #1d4ed8; /* Tailwind's blue-800 */
+                }
+            
+                .back-menu {
+                    position: fixed;
+                    top: 1rem;
+                    left: 1rem;
+                    z-index: 50; /* Bring it in front of the navbar */
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    background: rgba(255, 255, 255, 0.8); /* Slightly transparent for visibility */
+                    padding: 0.5rem 1rem;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+            
+                .back-menu.hidden {
+                    display: none; /* Hide when not needed */
+                }
+            
+                @media (max-width: 640px) {
+                    .back-menu {
+                        padding: 0.25rem 0.75rem;
+                        font-size: 0.875rem;
+                    }
+                }
+            </style>
+            
+            <script>
+                const data = {
+    "USA": {
+        "image": "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",   
+        "universities": [
+        {
+                "name": "Princeton University",
+                "image": "https://admissionsight.com/wp-content/uploads/2023/04/shutterstock_191822357.jpg",   
+                "location": "New Jersey (NJ)",
+                "rank": 1,
+                "type": "Private",
+                "yearEstablished": 1746,
+                "cityPopulation": "31,822",
+                "acceptingExams": ["TOEFL", "IELTS", "GRE", "GMAT", "PTE", "Duolingo"]
+            },
+            {
+                "name": "Massachusetts Institute of Technology (MIT)",
+                "image": "https://media.istockphoto.com/id/1445066760/photo/building-10-killian-court-great-dome-massachusetts-institute-of-technology-mit-cambridge.jpg?s=612x612&w=0&k=20&c=GPYZCLaxMhiDyMmv3DbkFcPwTUcfJ61j35IzAkf9i6M=",   
+                "location": "Massachusetts",
+                "rank": 2,
+                "type": "Private",
+                "yearEstablished": 1861,
+                "cityPopulation": "1,18,403",
+                "acceptingExams": ["TOEFL", "IELTS", "GRE", "GMAT"]
+            },
+            {
+                "name": "Harvard University",
+                "image": "https://img.freepik.com/premium-photo/dormitories-harvard-computer-society-building-harvard-yard-harvard-university-cambridge-massachusetts-ma-usa_250132-11224.jpg",   
+                "location": "Massachusetts",
+                "rank": 3,
+                "type": "Private",
+                "yearEstablished": 1636,
+                "cityPopulation": "1,18,403",
+                "acceptingExams": ["IELTS", "TOEFL", "Duolingo", "PTE", "GMAT", "GRE"]
+            },
+            {
+                "name": "Stanford University",
+                "image": "https://media.istockphoto.com/id/1137558833/photo/stanford-university-at-dawn.jpg?s=612x612&w=0&k=20&c=3qBogbIsUipBXsBQ95lFnLNqNWcLnlbFhChWDqRDRWc=",  
+                "location": "California",
+                "rank": 4,
+                "type": "Private",
+                "yearEstablished": 1885,
+                "cityPopulation": "13,809",
+                "acceptingExams": ["TOEFL", "GRE", "GMAT", "IELTS", "PTE"]
+            },
+            {
+                "name": "Yale University",
+                "image": "https://media.istockphoto.com/id/475315086/photo/yale-university-buildings.jpg?s=612x612&w=0&k=20&c=FygHbo4S-clsnKNqz11PXtoISlRFEFbLGYrzQrb9_gY=",  
+                "location": "Connecticut",
+                "rank": 5,
+                "type": "Private",
+                "yearEstablished": 1701,
+                "cityPopulation": "1,29,934",
+                "acceptingExams": ["TOEFL", "GRE", "IELTS", "GMAT", "Duolingo", "PTE"]
+            },
+            {
+                "name": "California Institute of Technology",
+                "image": "https://media.istockphoto.com/id/458411541/photo/beckman-institute.jpg?s=612x612&w=0&k=20&c=YBeM0b9VPV3D58C7ydXe4kmKi2JBBfHwoYBs2VYC_0c=",   
+                "location": "Pasadena, CT",
+                "rank": 6,
+                "type": "Private",
+                "yearEstablished": 1891,
+                "cityPopulation": "1,43,000",
+                "acceptingExams": ["TOEFL", "SAT", "IELTS", "Duolingo"]
+            },
+            {
+                "name": "Duke University",
+                "image": "https://img.freepik.com/free-photo/aerial-view-residence-bukovinian-dalmatian-metropolitans-chernivtsi-national-university-chernivtsi-touristic-destination-western-ukraine_231208-51.jpg",   
+                "location": "Durham, North Carolina",
+                "rank": 7,
+                "type": "Private",
+                "yearEstablished": 1838,
+                "cityPopulation": "2,63,000",
+                "acceptingExams": ["IELTS", "TOEFL", "GRE", "Duolingo"]
+            },
+            {
+                "name": "Johns Hopkins University",
+                "image": "https://img.freepik.com/premium-photo/baltimore-usa-may-21-2018-john-hopkins-university-baltimore_850000-28237.jpg",   
+                "location": "Baltimore, Maryland",
+                "rank": 8,
+                "type": "Private",
+                "yearEstablished": 1876,
+                "cityPopulation": "6,19,000",
+                "acceptingExams": ["IELTS", "TOEFL", "GRE", "GMAT", "PTE"]
+            },
+            {
+                "name": "Northwestern University",
+                "image": "https://news.northwestern.edu/images/default-source/campus-images/2018/11/15/northwestern_campus_112018.jpg?sfvrsn=0",   
+                "location": "Evanston, Illinois",
+                "rank": 9,
+                "type": "Private",
+                "yearEstablished": 1851,
+                "cityPopulation": "74,756",
+                "acceptingExams": ["TOEFL", "IELTS", "GRE", "GMAT", "Duolingo"]
+            },
+            {
+                "name": "University of Pennsylvania",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/University_of_Pennsylvania_seal.svg/1200px-University_of_Pennsylvania_seal.svg.png",   
+                "location": "Philadelphia, Pennsylvania",
+                "rank": 10,
+                "type": "Private",
+                "yearEstablished": 1740,
+                "cityPopulation": "15,80,863",
+                "acceptingExams": ["TOEFL", "IELTS", "GRE"]
+            },
+            {
+                "name": "Cornell University",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Cornell_University_logo.svg/1200px-Cornell_University_logo.svg.png",   
+                "location": "Ithaca, New York",
+                "rank": 11,
+                "type": "Private",
+                "yearEstablished": 1865,
+                "cityPopulation": "30,756",
+                "acceptingExams": ["IELTS", "TOEFL", "GRE", "GMAT"]
+            },
+            {
+                "name": "University of Chicago",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/University_of_Chicago_logo.svg/1200px-University_of_Chicago_logo.svg.png",   
+                "location": "Chicago, Illinois",
+                "rank": 12,
+                "type": "Private",
+                "yearEstablished": 1890,
+                "cityPopulation": "27,16,450",
+                "acceptingExams": ["IELTS", "GMAT", "GRE", "TOEFL", "PTE", "Duolingo"]
+            },
+            {
+                "name": "Brown University",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Brown_University_seal.svg",   
+                "location": "Providence, Rhode Island",
+                "rank": 13,
+                "type": "Private",
+                "yearEstablished": 1764,
+                "cityPopulation": "1,79,000",
+                "acceptingExams": ["IELTS", "TOEFL"]
+            },
+            {
+                "name": "Columbia University",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Columbia_University_seal.svg/1200px-Columbia_University_seal.svg.png",   
+                "location": "New York",
+                "rank": 14,
+                "type": "Private",
+                "yearEstablished": 1754,
+                "cityPopulation": "86,22,697",
+                "acceptingExams": ["TOEFL", "GRE", "IELTS", "PTE", "Duolingo", "GMAT"]
+            },
+            {
+                "name": "Dartmouth College",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Dartmouth_College_seal.svg/1200px-Dartmouth_College_seal.svg.png",   
+                "location": "Hanover, New Hampshire",
+                "rank": 15,
+                "type": "Private",
+                "yearEstablished": 1769,
+                "cityPopulation": "11,260",
+                "acceptingExams": ["TOEFL", "IELTS", "PTE", "GRE", "GMAT"]
+            },
+            {
+    "name": "University of California-Los Angeles",
+    "location": "California",
+    "rank": 16,
+    "type": "Public",
+    "yearEstablished": 1919,
+    "cityPopulation": "39,99,759",
+    "acceptingExams": ["IELTS", "TOEFL", "GRE", "GMAT"]
+  },
+  {
+    "name": "University of California-Berkeley",
+    "location": "California",
+    "rank": 17,
+    "type": "Public",
+    "yearEstablished": 1868,
+    "cityPopulation": "1,21,643",
+    "acceptingExams": ["IELTS", "TOEFL", "GRE", "GMAT"]
+  },
+  {
+    "name": "Rice University",
+    "location": "Houstan, Texas",
+    "rank": 18,
+    "type": "Private",
+    "yearEstablished": 1912,
+    "cityPopulation": "69,99,389",
+    "acceptingExams": ["IELTS", "TOEFL", "GRE", "Duolingo", "GMAT", "PTE"]
+  },
+  {
+    "name": "University of Norte Dame",
+    "location": "Norte Dame",
+    "rank": 19,
+    "type": "Private",
+    "yearEstablished": 1842,
+    "cityPopulation": "7,234",
+    "acceptingExams": [] // Empty array as no exams are listed
+  },
+  {
+    "name": "Vanderbilt University",
+    "location": "Nashville, Tennessee",
+    "rank": 20,
+    "type": "Private",
+    "yearEstablished": 1873,
+    "cityPopulation": "6,91,243",
+    "acceptingExams": ["TOEFL", "IELTS", "PTE", "Duolingo", "GRE", "GMAT"]
+  },
+  {
+    "name": "Carnegie Mellon University",
+    "location": "Pittsburgh, Pennsylvania",
+    "rank": 21,
+    "type": "Private",
+    "yearEstablished": 1900,
+    "cityPopulation": "3,02,407",
+    "acceptingExams": ["TOEFL", "IELTS", "Duolingo", "GRE", "GMAT"]
+  },
+  {
+    "name": "University of Michigan",
+    "location": "Ann Arbor, Michigan",
+    "rank": 22,
+    "type": "Public",
+    "yearEstablished": 1817,
+    "cityPopulation": "1,21,477",
+    "acceptingExams": ["TOEFL", "IELTS", "GRE", "GMAT", "PTE"]
+  },
+  {
+    "name": "Washington University in St. Louis",
+    "location": "Missouri",
+    "rank": 23,
+    "type": "Private",
+    "yearEstablished": 1853,
+    "cityPopulation": "3,08,626",
+    "acceptingExams": ["IELTS", "TOEFl", "GRE", "GMAT", "Duolingo"]
+  },
+  {
+    "name": "Emory University",
+    "location": "Emory, Georgia",
+    "rank": 24,
+    "type": "Private",
+    "yearEstablished": 1836,
+    "cityPopulation": "4,86,290",
+    "acceptingExams": ["TOEFL", "IELTS", "Duolingo", "GRE", "GMAT"]
+  },
+  {
+    "name": "Georgetown University",
+    "location": "Washington, DC",
+    "rank": 25,
+    "type": "Private",
+    "yearEstablished": 1789,
+    "cityPopulation": "6,94,000",
+    "acceptingExams": ["TOEFL", "IELTS", "Duolingo", "GRE", "GMAT", "SAT"]
+  },
+  {
+    "name": "University of Virginia",
+    "location": "virginia",
+    "rank": 26,
+    "type": "Public",
+    "yearEstablished": 1819,
+    "cityPopulation": "48,019",
+    "acceptingExams": ["TOEFL", "IELTS", "GRE", "PTE"]
+  },
+  {
+    "name": "University of North Carolina-Chapel Hill",
+    "location": "North Carolina",
+    "rank": 27,
+    "type": "Public",
+    "yearEstablished": 1789,
+    "cityPopulation": "1,04,39,388",
+    "acceptingExams": ["TOEFL", "IELTS", "GMAT", "SAT"]
+  },
+  {
+    "name": "University of Southern California",
+    "location": "Los Angeles",
+    "rank": 28,
+    "type": "Private",
+    "yearEstablished": 1880,
+    "cityPopulation": "39,99,759",
+    "acceptingExams": ["TOEFL", "IELTS", "PTE", "GMAT", "GRE"]
+  },
+    {
+    "name": "University of California, San Diego",
+    "location": "California",
+    "rank": 29,
+    "type": "Public",
+    "yearEstablished": 1960,
+    "cityPopulation": "14,19,516",
+    "acceptingExams": ["IELTS", "TOEFL", "PTE", "GRE", "GMAT"]
+  },
+  {
+    "name": "New York University",
+    "location": "New York",
+    "rank": 30,
+    "type": "Private",
+    "yearEstablished": 1831,
+    "cityPopulation": "86,22,697",
+    "acceptingExams": ["TOEFL", "IELTS", "Duolingo", "PTE", "GRE", "GMAT"]
+  }
+        ]
+    },
+    "UK":{
+        "image": "https://img.freepik.com/free-photo/big-ben-houses-parliament-london-uk_268835-1400.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Canada":{
+        "image": "https://img.freepik.com/free-photo/beautiful-shot-boats-parked-near-coal-harbour-vancouver_181624-42637.jpg?semt=ais_hybrid",   
+        "universities":[
+
+        ]
+    },
+    "Australia":{
+        "image": "https://img.freepik.com/premium-photo/photo-sydney-opera-house_931878-56361.jpg",   
+        "universities":[
+
+        ]
+    },
+    "New Zealand":{
+        "image": "https://static.vecteezy.com/system/resources/thumbnails/048/206/453/small_2x/beautiful-sunset-sky-over-illuminated-queenstown-with-lake-wakatipu-at-new-zealand-photo.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Germany":{
+        "image": "https://img.freepik.com/free-photo/beautiful-shot-henkersteg-bridge-nuremberg-germany-cloudy-daylight_181624-22927.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Netherlands":{
+        "image": "https://img.freepik.com/premium-photo/famous-place-amsterdam-cityscape-netherlands-travel-landmarks-urban-view_1302048-3354.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Ireland":{
+        "image": "https://img.freepik.com/free-photo/aerial-view-city_23-2150893025.jpg?semt=ais_hybrid",   
+        "universities":[
+
+        ]
+    },
+    "France":{
+        "image": "https://img.freepik.com/free-photo/cityscape-paris-sunlight-blue-sky-fra_181624-50289.jpg?semt=ais_incoming",   
+        "universities":[
+
+        ]
+    },
+    "Sweden":{
+        "image": "https://img.freepik.com/premium-photo/architecture-stockholm-sweden_136401-2534.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Poland":{
+        "image": "https://img.freepik.com/free-photo/prague-architecture_268835-3307.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Italy":{
+        "image": "https://img.freepik.com/free-photo/beautiful-cityscape-with-historic-buildings-florence-italy_181624-49926.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Singapore":{
+        "image": "https://img.freepik.com/premium-photo/singapore-city-skyline-singapores-business-district-singapore_1028938-76070.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Switzerland":{
+        "image": "https://img.freepik.com/premium-photo/zurich-largest-city-switzerland_218319-7102.jpg",   
+        "universities":[
+
+        ]
+    },
+    "Malta":{
+        "image": "https://img.freepik.com/free-photo/beautiful-sunset-view-historic-sites-by-river-valletta-malta_181624-49420.jpg",   
+        "universities":[
+
+        ]
+    },
 }
 
+            
+                function displayCountries() {
+                    const countryList = document.getElementById('country-list');
+                    countryList.innerHTML = ''; // Clear previous content
+                    document.querySelector('.back-menu').classList.add('hidden'); // Hide back button
+            
+                    for (const country in data) {
+                        const countryDiv = document.createElement('div');
+                        countryDiv.className = "relative w-full h-64 rounded overflow-hidden shadow cursor-pointer group";
+                        countryDiv.onclick = () => displayUniversities(country);
+                        countryDiv.innerHTML = `
+                            <div id="cntry" class="cntry absolute inset-0 bg-cover hover:scale-110 bg-center transform transition-transform duration-300 group-hover:scale-110" style="background-image: url('${data[country].image}');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 z-10 text-white">
+                                <h2 class="text-2xl font-semibold">${country}</h2>
+                            </div>
+                        `;
+                        countryList.appendChild(countryDiv);
+                    }
+                }
+            
+                function displayUniversities(country) {
+    const countryList = document.getElementById('country-list');
+    countryList.innerHTML = ''; // Clear previous content
+    document.querySelector('.back-menu').classList.remove('hidden'); // Show back button
 
+    const universities = data[country].universities;
 
+    universities.forEach(university => {
+        const uniDiv = document.createElement('div');
+        uniDiv.className = "relative w-full h-64 rounded overflow-hidden shadow cursor-pointer group mb-4";
+        uniDiv.innerHTML = `
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300 group-hover:scale-110" style="background-image: url('${university.image}');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div>
+            <div class="absolute bottom-4 left-4 z-10 text-white">
+                <h3 class="text-xl font-semibold">${university.name}</h3>
+                <p>Location: ${university.location}</p>
+                <p>Rank: ${university.rank}</p>
+                <p>Type: ${university.type}</p>
+                <p>Year Established: ${university.yearEstablished}</p>
+                <p><City Population: ${university.cityPopulation}</p>
+                <p>Accepting Exams: ${university.acceptingExams.join(', ')}</p>
+            </div>
+        `;
+        countryList.appendChild(uniDiv);
+    });
+}
 
-        function displayUniversities(country) {
-            const countryDiv = document.getElementById('country-list');
-            countryDiv.innerHTML = ''; // Clear previous content
-            const universities = data[country].universities;
+            
+                document.addEventListener('DOMContentLoaded', () => {
+    const backMenu = document.createElement('div');
+    backMenu.className = "back-menu hidden";
+    backMenu.onclick = displayCountries; // Attach click handler to the entire div
+    backMenu.innerHTML = `
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="font-medium text-blue-700">Back</span>
+    `;
+    document.body.appendChild(backMenu);
 
-            // Add back button to return to countries
-            const backButton = document.createElement('button');
-            backButton.className = "mb-4 bg-blue-500 text-white px-4 py-2 rounded";
-            backButton.innerText = "Back to Countries";
-            backButton.onclick = displayCountries;
-            countryDiv.appendChild(backButton);
+    displayCountries(); // Initialize the view
+});
 
-            universities.forEach(university => {
-                const uniDiv = document.createElement('div');
-                uniDiv.className = "bg-white p-4 rounded shadow hover:shadow-lg transition mb-4";
-                uniDiv.innerHTML = `<h3 class="text-lg font-semibold cursor-pointer" onclick="displayCharacteristics('${country}', '${university.name}')">${university.name}</h3>`;
-                countryDiv.appendChild(uniDiv);
-            });
-        }
-
-        function displayCharacteristics(country, universityName) {
-            const countryDiv = document.getElementById('country-list');
-            countryDiv.innerHTML = ''; // Clear previous content
-            const university = data[country].universities.find(uni => uni.name === universityName);
-
-            university.characteristics.forEach(characteristic => {
-                const charDiv = document.createElement('div');
-                charDiv.className = "bg-white p-4 rounded shadow mb-4";
-                charDiv.innerHTML = `<p>${characteristic}</p>`;
-                countryDiv.appendChild(charDiv);
-            });
-
-            // Add back button to return to universities
-            const backButton = document.createElement('button');
-            backButton.className = "mt-4 bg-blue-500 text-white px-4 py-2 rounded";
-            backButton.innerText = "Back to Universities";
-            backButton.onclick = () => displayUniversities(country);
-            countryDiv.appendChild(backButton);
-        }
-
-        // Initialize the display
-        displayCountries();
-    </script>
-	<section id="footer" class="bg-gray-100 py-8">
-        <div class="text-center">
-            <p class="text-lg">
-                © <script>document.write(new Date().getFullYear())</script>
-                All Rights Reserved by MalVQuest <br>
-                <p class="text-sm">
-                    Website Designed By
-                    <a href="https://www.linkedin.com/in/dhayananthgs" class="text-blue-500 hover:underline" target="_blank">Dhayananth</a> &
-                    <a href="https://www.linkedin.com/in/kishore-b/" class="text-blue-500 hover:underline" target="_blank">Kishore</a>
-                </p>
-            </p>
-        </div>
-    </section> 
+            </script>
+            
+            
 </body>
 </html>
