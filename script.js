@@ -82,13 +82,11 @@ window.addEventListener('scroll', () => {
 window.onload = function () {
     const loader = document.getElementById('loader-container');
     const content = document.getElementById('content');
-
-    // Hide loader
-    loader.style.display = 'none';
-
-    // Show content
-    content.style.display = 'block';
+    loader.style.display = 'none';      // Hide loader
+    content.style.display = 'block';    // Show content
 };
+
+
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbw8lrd_i81uKeBMbVoxAbMjY8J1U1atCgIwOcO4TeJICcLA8ylzb5gCj_sXseAK2Tkrqg/exec";
 const form = document.forms["submit-to-google-sheet"];
